@@ -15,11 +15,22 @@ function adicionarAmigo() {
 
 function exibeAmigos(){
     let ulElement = document.getElementById('listaAmigos');
-    ulElement.innerHTML = ''
+    ulElement.innerHTML = '';
     listaAmigos.forEach(amigo => {
         let liElement = document.createElement('li');
         liElement.textContent = amigo;
         ulElement.appendChild(liElement);
     })
     console.log(listaAmigos);
+}
+
+function sortearAmigo(){
+    if (listaAmigos.length == 0) {
+        alert('Você não possui amigos na sua lista!');
+    } else {
+        let indice = parseInt(Math.random() * (listaAmigos.length - 1));
+        let amigoSorteado = listaAmigos[indice];
+        let resultado = document.getElementById('resultado');
+        resultado.innerHTML = amigoSorteado;
+    }
 }
